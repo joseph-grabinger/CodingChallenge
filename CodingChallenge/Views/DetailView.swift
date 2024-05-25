@@ -11,26 +11,19 @@ struct DetailView: View {
     @ObservedObject var viewModel: DetailViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            AsyncImage(
+        VStack() {
+            AsyncImageView(
                 url: URL(string: viewModel.photo.url),
-                content: { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 600, maxHeight: 600)
-                },
-                placeholder: {
-                    ProgressView().progressViewStyle(.circular)
-               }
+                size: CGSize(width: 600, height: 600)
             )
             
             Text(viewModel.photo.title)
-                .font(.largeTitle)
                 .padding(.bottom)
             
             Spacer()
         }
         .padding()
-        .navigationTitle("Detail")
+        .navigationTitle(viewModel.photo.title)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

@@ -15,16 +15,9 @@ struct OverviewView: View {
             List(viewModel.photos) { photo in
                 NavigationLink(destination: DetailView(viewModel: DetailViewModel(photo: photo))) {
                     HStack {
-                        AsyncImage(
+                        AsyncImageView(
                             url: URL(string: photo.thumbnailUrl),
-                            content: { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 50, maxHeight: 50)
-                            },
-                            placeholder: {
-                                ProgressView().progressViewStyle(.circular)
-                           }
+                            size: CGSize(width: 50, height: 50)
                         )
                         Text(photo.title)
                     }
