@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF644C442C01F42700FDF920 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C432C01F42700FDF920 /* Photo.swift */; };
+		DF644C462C01F53B00FDF920 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C452C01F53B00FDF920 /* OverviewViewModel.swift */; };
+		DF644C482C01F67100FDF920 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C472C01F67100FDF920 /* DetailViewModel.swift */; };
+		DF644C4A2C01F6CC00FDF920 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C492C01F6CC00FDF920 /* OverviewView.swift */; };
+		DF644C4C2C01F82300FDF920 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C4B2C01F82300FDF920 /* DetailView.swift */; };
+		DF644C4F2C01FABD00FDF920 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C4E2C01FABD00FDF920 /* ApiClient.swift */; };
 		DFDF2C832C01E6CE00105561 /* CodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF2C822C01E6CE00105561 /* CodingChallengeApp.swift */; };
-		DFDF2C852C01E6CE00105561 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF2C842C01E6CE00105561 /* ContentView.swift */; };
 		DFDF2C872C01E6D000105561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDF2C862C01E6D000105561 /* Assets.xcassets */; };
 		DFDF2C8A2C01E6D000105561 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDF2C892C01E6D000105561 /* Preview Assets.xcassets */; };
 		DFDF2C942C01E6D000105561 /* CodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF2C932C01E6D000105561 /* CodingChallengeTests.swift */; };
@@ -34,9 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF644C432C01F42700FDF920 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		DF644C452C01F53B00FDF920 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
+		DF644C472C01F67100FDF920 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DF644C492C01F6CC00FDF920 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		DF644C4B2C01F82300FDF920 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DF644C4E2C01FABD00FDF920 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		DFDF2C7F2C01E6CE00105561 /* CodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDF2C822C01E6CE00105561 /* CodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengeApp.swift; sourceTree = "<group>"; };
-		DFDF2C842C01E6CE00105561 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DFDF2C862C01E6D000105561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFDF2C892C01E6D000105561 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFDF2C8F2C01E6D000105561 /* CodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +81,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF644C402C01F2F700FDF920 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF644C432C01F42700FDF920 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF644C412C01F30800FDF920 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DF644C452C01F53B00FDF920 /* OverviewViewModel.swift */,
+				DF644C472C01F67100FDF920 /* DetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DF644C422C01F31200FDF920 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF644C492C01F6CC00FDF920 /* OverviewView.swift */,
+				DF644C4B2C01F82300FDF920 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF644C4D2C01FAA800FDF920 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DF644C4E2C01FABD00FDF920 /* ApiClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		DFDF2C762C01E6CE00105561 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +138,11 @@
 		DFDF2C812C01E6CE00105561 /* CodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				DF644C4D2C01FAA800FDF920 /* Network */,
+				DF644C422C01F31200FDF920 /* Views */,
+				DF644C412C01F30800FDF920 /* ViewModels */,
+				DF644C402C01F2F700FDF920 /* Models */,
 				DFDF2C822C01E6CE00105561 /* CodingChallengeApp.swift */,
-				DFDF2C842C01E6CE00105561 /* ContentView.swift */,
 				DFDF2C862C01E6D000105561 /* Assets.xcassets */,
 				DFDF2C882C01E6D000105561 /* Preview Content */,
 			);
@@ -257,7 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFDF2C852C01E6CE00105561 /* ContentView.swift in Sources */,
+				DF644C442C01F42700FDF920 /* Photo.swift in Sources */,
+				DF644C4A2C01F6CC00FDF920 /* OverviewView.swift in Sources */,
+				DF644C462C01F53B00FDF920 /* OverviewViewModel.swift in Sources */,
+				DF644C4F2C01FABD00FDF920 /* ApiClient.swift in Sources */,
+				DF644C4C2C01F82300FDF920 /* DetailView.swift in Sources */,
+				DF644C482C01F67100FDF920 /* DetailViewModel.swift in Sources */,
 				DFDF2C832C01E6CE00105561 /* CodingChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
