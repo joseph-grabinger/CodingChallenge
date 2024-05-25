@@ -12,19 +12,24 @@ struct AsyncImageView: View {
     let size: CGSize
         
     var body: some View {
-        AsyncImage(
-            url: url,
-            content: { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: size.height, height: size.width)
-            },
-            placeholder: {
+        AsyncImage(url: url) { phase in
+            switch phase {
+            case .empty:
                 ProgressView()
                     .progressViewStyle(.circular)
-                    .frame(width: size.width, height: size.height)
-           }
-        )
+            case .success(let image):
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            case .failure(let error):
+                let _ = print("AsyncImageError: \(error)")
+                Image(systemName: "exclamationmark.triangle")
+                    .padding()
+                    .foregroundStyle(.tint)
+            @unknown default:
+                fatalError()
+            }
+        }
+        .frame(width: size.height, height: size.width)
     }
 }
