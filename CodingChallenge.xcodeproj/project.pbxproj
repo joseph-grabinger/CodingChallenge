@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFC13E722C03D4FD00115E76 /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC13E712C03D4FD00115E76 /* ApiProtocol.swift */; };
 		DF644C442C01F42700FDF920 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C432C01F42700FDF920 /* Photo.swift */; };
 		DF644C462C01F53B00FDF920 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C452C01F53B00FDF920 /* OverviewViewModel.swift */; };
 		DF644C482C01F67100FDF920 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C472C01F67100FDF920 /* DetailViewModel.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CFC13E712C03D4FD00115E76 /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
 		DF644C432C01F42700FDF920 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		DF644C452C01F53B00FDF920 /* OverviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModel.swift; sourceTree = "<group>"; };
 		DF644C472C01F67100FDF920 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				DF644C4E2C01FABD00FDF920 /* ApiClient.swift */,
 				DF644C532C03310200FDF920 /* ImageLoader.swift */,
 				DF644C552C0331D600FDF920 /* ApiError.swift */,
+				CFC13E712C03D4FD00115E76 /* ApiProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				DF644C4A2C01F6CC00FDF920 /* OverviewView.swift in Sources */,
 				DF644C462C01F53B00FDF920 /* OverviewViewModel.swift in Sources */,
 				DF644C562C0331D600FDF920 /* ApiError.swift in Sources */,
+				CFC13E722C03D4FD00115E76 /* ApiProtocol.swift in Sources */,
 				DF644C522C02078C00FDF920 /* AsyncImageView.swift in Sources */,
 				DF644C4F2C01FABD00FDF920 /* ApiClient.swift in Sources */,
 				DF644C542C03310200FDF920 /* ImageLoader.swift in Sources */,

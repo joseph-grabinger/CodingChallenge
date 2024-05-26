@@ -21,9 +21,6 @@ struct OverviewView: View {
                 }
             }
             .navigationTitle("Overview")
-            .onAppear() {
-                viewModel.getPhotos()
-            }
         }
     }
 }
