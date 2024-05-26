@@ -15,10 +15,7 @@ struct OverviewView: View {
             List(viewModel.photos) { photo in
                 NavigationLink(destination: DetailView(viewModel: DetailViewModel(photo: photo))) {
                     HStack {
-                        AsyncImageView(
-                            url: URL(string: photo.thumbnailUrl),
-                            size: CGSize(width: 50, height: 50)
-                        )
+                        AsyncImageView(url: photo.thumbnailUrl)
                         Text(photo.title)
                     }
                 }

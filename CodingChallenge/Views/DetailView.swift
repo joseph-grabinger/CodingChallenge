@@ -13,8 +13,9 @@ struct DetailView: View {
     var body: some View {
         VStack {
             AsyncImageView(
-                url: URL(string: viewModel.photo.url),
-                size: CGSize(width: 600, height: 600)
+                url: viewModel.photo.url,
+                imageSize: 600,
+                cacheImage: false
             )
             
             VStack(alignment: .leading, spacing: 8) {

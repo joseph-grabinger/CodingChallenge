@@ -8,28 +8,44 @@
 import SwiftUI
 
 struct AsyncImageView: View {
-    let url: URL?
-    let size: CGSize
-        
+    @StateObject var imageLoader: ImageLoader
+    let imageSize: CGFloat
+    
+    init(url: String?, imageSize: CGFloat = 50, cacheImage: Bool = true) {
+        self._imageLoader = StateObject(wrappedValue: ImageLoader(url: url, useCacheData: cacheImage))
+        self.imageSize = imageSize
+    }
+    
     var body: some View {
-        AsyncImage(url: url) { phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-                    .progressViewStyle(.circular)
-            case .success(let image):
-                image
+        Group {
+            if imageLoader.image != nil {
+                Image(uiImage: imageLoader.image!)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-            case .failure(let error):
-                let _ = print("AsyncImageError: \(error)")
-                Image(systemName: "exclamationmark.triangle")
-                    .padding()
-                    .foregroundStyle(.tint)
-            @unknown default:
-                fatalError()
+                    .scaledToFit()
+                    .frame(width: imageSize, height: imageSize)
+                    .clipped()
+                
+            } else if imageLoader.errorMessage != nil {
+                Text(imageLoader.errorMessage!)
+                    .foregroundColor(Color.orange)
+                    .frame(width: imageSize, height: imageSize)
+                
+            } else {
+                ProgressView()
+                    .frame(width: imageSize, height: imageSize)
+                
             }
         }
-        .frame(width: size.height, height: size.width)
+        .onAppear {
+            imageLoader.fetch()
+        }
+        .onDisappear {
+            imageLoader.cancel()
+        }
     }
 }
+
+#Preview {
+    AsyncImageView(url: nil)
+}
+
