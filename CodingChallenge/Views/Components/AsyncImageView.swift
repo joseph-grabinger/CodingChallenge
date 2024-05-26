@@ -39,6 +39,9 @@ struct AsyncImageView: View {
         .onAppear {
             imageLoader.fetch()
         }
+        .onDisappear {
+            imageLoader.cancel()
+        }
     }
 }
 

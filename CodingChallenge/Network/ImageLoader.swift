@@ -10,17 +10,17 @@ import SwiftUI
 
 class ImageLoader: ObservableObject {
 
-    let url: String?
-    
-    let useCacheData: Bool
-    
+    private let url: String?
+    private let cacheAndDontCancel: Bool
+    private var cancellable: URLSessionDataTask?
+
     @Published var image: UIImage? = nil
     @Published var errorMessage: String? = nil
     @Published var isLoading: Bool = false
     
     init(url: String?, useCacheData: Bool = true) {
         self.url = url
-        self.useCacheData = useCacheData
+        self.cacheAndDontCancel = useCacheData
     }
     
     func fetch() {
@@ -39,7 +39,7 @@ class ImageLoader: ObservableObject {
         
         let request = URLRequest(
             url: fetchURL,
-            cachePolicy: useCacheData ? .returnCacheDataElseLoad : .reloadIgnoringLocalAndRemoteCacheData
+            cachePolicy: cacheAndDontCancel ? .returnCacheDataElseLoad : .reloadIgnoringLocalAndRemoteCacheData
         )
         
         let task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
@@ -61,5 +61,13 @@ class ImageLoader: ObservableObject {
         }
         
         task.resume()
+        cancellable = task
     }
+    
+    func cancel() {
+        if (cacheAndDontCancel) {
+            cancellable?.cancel()
+            cancellable = nil
+        }
+   }
 }
