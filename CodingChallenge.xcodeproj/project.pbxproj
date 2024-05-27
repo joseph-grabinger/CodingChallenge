@@ -17,6 +17,7 @@
 		DF644C522C02078C00FDF920 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C512C02078C00FDF920 /* AsyncImageView.swift */; };
 		DF644C542C03310200FDF920 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C532C03310200FDF920 /* ImageLoader.swift */; };
 		DF644C562C0331D600FDF920 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C552C0331D600FDF920 /* ApiError.swift */; };
+		DF644C5A2C04FDB700FDF920 /* ApiMockClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF644C592C04FDB700FDF920 /* ApiMockClient.swift */; };
 		DFDF2C832C01E6CE00105561 /* CodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF2C822C01E6CE00105561 /* CodingChallengeApp.swift */; };
 		DFDF2C872C01E6D000105561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDF2C862C01E6D000105561 /* Assets.xcassets */; };
 		DFDF2C8A2C01E6D000105561 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFDF2C892C01E6D000105561 /* Preview Assets.xcassets */; };
@@ -53,6 +54,8 @@
 		DF644C512C02078C00FDF920 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		DF644C532C03310200FDF920 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		DF644C552C0331D600FDF920 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		DF644C592C04FDB700FDF920 /* ApiMockClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMockClient.swift; sourceTree = "<group>"; };
+		DF644C5C2C050CFE00FDF920 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DFDF2C7F2C01E6CE00105561 /* CodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDF2C822C01E6CE00105561 /* CodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingChallengeApp.swift; sourceTree = "<group>"; };
 		DFDF2C862C01E6D000105561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 				DF644C532C03310200FDF920 /* ImageLoader.swift */,
 				DF644C552C0331D600FDF920 /* ApiError.swift */,
 				CFC13E712C03D4FD00115E76 /* ApiProtocol.swift */,
+				DF644C592C04FDB700FDF920 /* ApiMockClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -138,6 +142,7 @@
 		DFDF2C762C01E6CE00105561 = {
 			isa = PBXGroup;
 			children = (
+				DF644C5C2C050CFE00FDF920 /* README.md */,
 				DFDF2C812C01E6CE00105561 /* CodingChallenge */,
 				DFDF2C922C01E6D000105561 /* CodingChallengeTests */,
 				DFDF2C9C2C01E6D000105561 /* CodingChallengeUITests */,
@@ -325,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF644C442C01F42700FDF920 /* Photo.swift in Sources */,
+				DF644C5A2C04FDB700FDF920 /* ApiMockClient.swift in Sources */,
 				DF644C4A2C01F6CC00FDF920 /* OverviewView.swift in Sources */,
 				DF644C462C01F53B00FDF920 /* OverviewViewModel.swift in Sources */,
 				DF644C562C0331D600FDF920 /* ApiError.swift in Sources */,
