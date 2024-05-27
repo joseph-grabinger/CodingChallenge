@@ -9,21 +9,36 @@ import Foundation
 import Combine
 
 class OverviewViewModel: ObservableObject {
-    @Published var photos: [Photo] = []
-    private var cancellables = Set<AnyCancellable>()
-    
-    func getPhotos() {
-        ApiClient.shared.fetchPhotos()
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let error):
-                    print("Error fetching photos: \(error)")
-                case .finished:
-                    break
-                }
-            }, receiveValue: { [weak self] photos in
-                self?.photos = photos
-            })
-            .store(in: &cancellables)
-    }
+
+	@Published var photos = [Photo]()
+	@Published var isLoading: Bool = false
+	@Published var errorMessage: String? = nil
+
+	let client: ApiProtocol
+
+	init(client: ApiProtocol = ApiClient.shared) {
+		self.client = client
+		self.fetchAllPhotos()
+	}
+
+	func fetchAllPhotos() {
+
+		isLoading = true
+		errorMessage = nil
+
+		client.fetchPhotos() { [unowned self] result in
+
+			DispatchQueue.main.async {
+
+				self.isLoading = false
+				switch result {
+				case .failure(let error):
+					self.errorMessage = error.localizedDescription
+					print(error)
+				case .success(let photos):
+					self.photos = photos
+				}
+			}
+		}
+	}
 }

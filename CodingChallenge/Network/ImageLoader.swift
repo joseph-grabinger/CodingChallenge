@@ -65,7 +65,7 @@ class ImageLoader: ObservableObject {
     }
     
     func cancel() {
-        if (cacheAndDontCancel) {
+        if (!cacheAndDontCancel) {
             cancellable?.cancel()
             cancellable = nil
         }

@@ -11,18 +11,34 @@ struct OverviewView: View {
     @StateObject private var viewModel = OverviewViewModel()
     
     var body: some View {
-        NavigationView {
-            List(viewModel.photos) { photo in
-                NavigationLink(destination: DetailView(viewModel: DetailViewModel(photo: photo))) {
-                    HStack {
-                        AsyncImageView(url: photo.thumbnailUrl)
-                        Text(photo.title)
-                    }
+        
+        if viewModel.isLoading {
+            VStack(spacing: 20)  {
+                ProgressView()
+                Text("Getting the photos ...")
+                    .foregroundColor(.gray)
+            }
+        } else if viewModel.errorMessage != nil {
+            VStack {
+                Text(viewModel.errorMessage ?? "")
+                
+                Button {
+                    viewModel.fetchAllPhotos()
+                } label: {
+                    Text("Try again")
                 }
             }
-            .navigationTitle("Overview")
-            .onAppear() {
-                viewModel.getPhotos()
+        } else {
+            NavigationView {
+                List(viewModel.photos) { photo in
+                    NavigationLink(destination: DetailView(viewModel: DetailViewModel(photo: photo))) {
+                        HStack {
+                            AsyncImageView(url: photo.thumbnailUrl)
+                            Text(photo.title)
+                        }
+                    }
+                }
+                .navigationTitle("Overview")
             }
         }
     }
